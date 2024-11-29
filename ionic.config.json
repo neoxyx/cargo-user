@@ -1,0 +1,7 @@
+{
+  "name": "cargo-user",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
