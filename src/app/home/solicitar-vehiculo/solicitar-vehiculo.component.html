@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content id="main-content">
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Origen</ion-label>
+      <ion-input [(ngModel)]="vehiculoData.origin" name="origin" (ionInput)="onInputOrigin($event)"
+        required></ion-input>
+      <ion-list *ngIf="originSuggestions.length > 0">
+        <ion-item *ngFor="let suggestion of originSuggestions" (click)="selectOrigin(suggestion)">
+          {{ suggestion.display_name }}
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <!-- Destino -->
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input [(ngModel)]="vehiculoData.destination" name="destination" (ionInput)="onInputDestination($event)"
+        required></ion-input>
+      <ion-list *ngIf="destinationSuggestions.length > 0">
+        <ion-item *ngFor="let suggestion of destinationSuggestions" (click)="selectDestination(suggestion)">
+          {{ suggestion.display_name }}
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Detalles de la Carga</ion-label>
+      <ion-input [(ngModel)]="vehiculoData.cargoDetails" name="cargoDetails" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Peso (kg)</ion-label>
+      <ion-input [(ngModel)]="vehiculoData.weight" name="weight" type="number" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <a (click)="onDestinationBlur()">Ver mapa</a>
+    </ion-item>
+    <ion-button expand="full" type="submit">Solicitar</ion-button>
+  </form>
+  <app-map *ngIf="isMapVisible" [origin]="vehiculoData.origin" [destination]="vehiculoData.destination"></app-map>
+</ion-content>

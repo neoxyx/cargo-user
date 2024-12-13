@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <ion-button expand="full" (click)="onLogin()">Login</ion-button>
+
+  <!--<ion-button expand="full" color="light" (click)="googleLogin()">
+    Login with Google
+  </ion-button>-->
+
+  <!--<ion-button expand="full" color="light" (click)="facebookLogin()">
+    Login with Facebook
+  </ion-button>-->
+
+  <!-- Optionally add a register form or button here -->
+  <ion-button expand="full" color="tertiary" (click)="goToRegister()">
+    Register
+  </ion-button>
+</ion-content>

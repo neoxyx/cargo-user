@@ -1,0 +1,22 @@
+ion-menu {
+    width: 80%; // Ocupa el 80% de la pantalla
+    max-width: 300px; // Máximo ancho del menú
+}
+
+ion-header {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+}
+
+ion-toolbar {
+    --background: var(--ion-color-secondary);
+}
+
+ion-item {
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-dark);
+}
+
+ion-icon {
+    color: var(--ion-color-primary);
+}
